@@ -1,3 +1,0 @@
-package AdventOfCode2021
-
-
