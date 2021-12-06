@@ -1,16 +1,37 @@
-# This is a sample Python script.
+import math
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+with open("./Data.txt") as file:
+    lines = file.readlines()
 
+newList = []
+for element in lines:
+    newList.append(element.strip())
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+vertical = len(newList)
+firstBinary = ''
+otherWay = ''
+intArray = []
 
+for hahahha in newList[0]:
+    intArray.append(0)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+for xd in range(0, len(newList)):
+    for tyr in range(0, len(newList[xd])):
+        if int(newList[xd][tyr]) == 1:
+            intArray[tyr] = intArray[tyr] + 1
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+for haha in range(0, len(intArray)):
+    if intArray[haha] > math.ceil(vertical/2):
+        firstBinary += '1'
+    else:
+        firstBinary += '0'
+
+for skudud in range(0, len(firstBinary)):
+    if firstBinary[skudud] == '0':
+        otherWay += '1'
+    else:
+        otherWay += '0'
+
+firstNumber = int(firstBinary, 2)
+secondNumber = int(otherWay, 2)
+print("multiplied: " + str(firstNumber*secondNumber))
